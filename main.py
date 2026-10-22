@@ -14,8 +14,11 @@ while True:
     #TO ADD NEW BOOK
     if choice == "1":
         title = input("Enter book title: ")
-        books.append({"title": title, "status": "Available"})
-        print("Book added successfully!")
+        if title.strip() == "":
+            print("Please enter the book title.")
+        else:
+            books.append({"title": title, "status": "Available"})
+            print("Book added successfully!")
 
     #TO CHECK BOOK AVAILABILITY
     elif choice == "2":
