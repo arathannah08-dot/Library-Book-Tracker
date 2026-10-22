@@ -5,9 +5,10 @@ while True:
     print("\n=== LIBRARY BOOK TRACKER ===")
     print("1. Add Book")
     print("2. View Books")
-    print("3. Borrow Book")
-    print("4. Return Book")
-    print("5. Exit")
+    print("3. Search Book")
+    print("4. Borrow Book")
+    print("5. Return Book")
+    print("6. Exit")
 
     choice = input("Enter your choice: ")
 
@@ -28,8 +29,21 @@ while True:
             for book in books:
                 print(book["title"], "-", book["status"])
 
+    #TO SEARCH BOOK
+    elif choice =="3":
+        title = input ("Search book title: ")
+        found = False
+
+        for book in books:
+            if title.lower() in book["title"].lower():
+                print(book["title"], "-", book["status"])
+                found = True
+
+        if not found:
+            print("Book not found.")
+
     #TO BORROW BOOK
-    elif choice == "3":
+    elif choice == "4":
         title = input("Enter the title to borrow: ")
         found = False
 
@@ -47,7 +61,7 @@ while True:
             print("Book not found.")
 
     #TO RETURN BOOK
-    elif choice == "4":
+    elif choice == "5":
         title = input("Enter the title to return: ")
         found = False
 
@@ -65,7 +79,7 @@ while True:
             print("Book not found.")
 
     #TO EXIT
-    elif choice == "5":
+    elif choice == "6":
         print("Thank you for using the Library Book Tracker!")
         break
 
