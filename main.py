@@ -1,3 +1,4 @@
+#LIBRARY BOOK MANAGEMENT SYSTEM
 
 books = []
 
@@ -14,6 +15,7 @@ while True:
 
     #TO ADD NEW BOOK
     if choice == "1":
+        print("\n=== ADD NEW BOOK ===")
         title = input("Enter book title: ")
         if title.strip() == "":
             print("Please enter the book title.")
@@ -37,6 +39,7 @@ while True:
 
     #TO CHECK BOOK AVAILABILITY
     elif choice == "2":
+        print("\n=== VIEW BOOKS ===")
         if len(books) == 0:
             print("No books in the library.")
         else:
@@ -47,9 +50,11 @@ while True:
                 print("Total Copies: ", book["copies"])
                 print("Available Copies: ", available)
                 print("Borrowed Copies: ", book["borrowed"])
+                print("---------------------------")
 
     #TO SEARCH BOOK
     elif choice =="3":
+        print("\n=== SEARCH BOOK ===")
         title = input ("Search book title: ")
         found = False
 
@@ -62,6 +67,7 @@ while True:
                 print("Total Copies: ", book["copies"])
                 print("Available Copies: ", available)
                 print("Borrowed Copies: ", book["borrowed"])
+                print("---------------------------")
                 
                 found = True
 
@@ -70,6 +76,7 @@ while True:
 
     #TO BORROW BOOK
     elif choice == "4":
+        print("\n=== BORROW BOOK ===")
         title = input("Enter the title to borrow: ")
         found = False
 
@@ -91,6 +98,7 @@ while True:
 
     #TO RETURN BOOK
     elif choice == "5":
+        print("\n=== RETURN BOOK ===")
         title = input("Enter the title to return: ")
         found = False
 
